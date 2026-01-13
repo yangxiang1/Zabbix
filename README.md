@@ -37,6 +37,9 @@ yum install -y wget vim net-tools gcc
 ## 二、服务端部署（核心步骤）
 
 Zabbix 6.4服务端依赖「Web服务（Apache/Nginx）+ 数据库（MySQL 8.0/MariaDB 10.5+）+ Zabbix Server」，本文采用「LAMP环境（Apache+MariaDB）」部署，兼容性更优。
+<img width="656" height="283" alt="image" src="https://github.com/user-attachments/assets/b72a9236-3e29-47d7-9312-3bc69085e2cc" />
+
+<img width="661" height="302" alt="image" src="https://github.com/user-attachments/assets/7d85327d-0b0d-424e-b357-3bcdcb4d54ee" />
 
 ### 1. 安装并配置MariaDB数据库
 
@@ -136,6 +139,8 @@ LogFile=/var/log/zabbix/zabbix_server.log  # 日志路径
 ```
 
 ### 5. 配置Zabbix Web前端（Apache）
+<img width="673" height="191" alt="image" src="https://github.com/user-attachments/assets/0c24dafb-1a0e-4165-bcdc-0a4faf2c0d89" />
+
 
 Zabbix Web前端依赖PHP环境，官方已通过zabbix-apache-conf包配置好Apache和PHP，只需修改PHP时区即可：
 
@@ -314,6 +319,8 @@ netstat -tnlp | grep 10050
 3. 点击「权限」，确保用户有对应的主机监控权限
 
 ### 3. 配置告警触发器
+<img width="678" height="260" alt="image" src="https://github.com/user-attachments/assets/02969658-e527-42a7-ac02-1da5e2b0c314" />
+
 
 使用官方模板的默认触发器（如CPU>80%、磁盘>90%）即可，也可自定义触发器：
 
@@ -338,6 +345,8 @@ netstat -tnlp | grep 10050
 ### 3. 告警邮件发送失败
 
 解决方案：① 检查SMTP服务器配置是否正确；② 确认邮箱授权码是否有效；③ 查看Zabbix日志（/var/log/zabbix/zabbix_server.log）中的告警相关错误信息。
+<img width="665" height="235" alt="image" src="https://github.com/user-attachments/assets/c804e546-9f7b-46c1-95f1-c21fdacae360" />
+
 
 ## 八、总结
 
@@ -347,5 +356,3 @@ netstat -tnlp | grep 10050
 
 
 
-
-> （注：文档部分内容可能由 AI 生成）
